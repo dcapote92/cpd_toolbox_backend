@@ -1,22 +1,18 @@
-"""
-URL configuration for app project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
+from models.views import ModelCreateListView, ModelRetrieveUpdateDestroy
+from sections.views import SectionCreateListView, SectionRetrieveUpdateDestroy
+from scales.views import ScaleCreateListView, ScaleRetrieveUpdateDestroy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    path('models/', ModelCreateListView.as_view(), name='model-list-view'),
+    path('models/<int:pk>/', ModelRetrieveUpdateDestroy.as_view(), name='model-detail-view'),
+
+    path('sections/', SectionCreateListView.as_view(), name='section-list-view'),
+    path('sections/<int:pk>/', SectionRetrieveUpdateDestroy.as_view(), name='section-detail-view'),
+
+    path('scales/', ScaleCreateListView.as_view(), name='scale-list-view'),
+    path('scales/<int:pk>/', ScaleRetrieveUpdateDestroy.as_view(), name='scale-detail-view'),
 ]
