@@ -7,7 +7,7 @@ class ScaleCreateListView(generics.ListCreateAPIView):
     queryset = Scale.objects.all()
     serializer_class = ScaleSerializer
 
+
 class ScaleRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     queryset = Scale.objects.all()
     serializer_class = ScaleSerializer
-

@@ -7,7 +7,7 @@ class SectionCreateListView(generics.ListCreateAPIView):
     queryset = Section.objects.all()
     serializer_class = SectionSerializer
 
+
 class SectionRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     queryset = Section.objects.all()
-    serializer_class =SectionSerializer
-
+    serializer_class = SectionSerializer
