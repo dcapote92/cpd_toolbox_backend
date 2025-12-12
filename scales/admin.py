@@ -7,6 +7,7 @@ class ScaleAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'number',
+        'model',
         'weight',
         'measurement_date',
         'measured_by',
