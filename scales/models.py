@@ -17,4 +17,4 @@ class Scale(models.Model):
     cleaned_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='cleaned_scales')
 
     def __str__(self):
-        return self.number
+        return str(self.number)
